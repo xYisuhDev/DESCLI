@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boletín de notas</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <h1 id="title">Boletín de notas</h1>
+    <div id="t-container">
+      <h2>Notas por trimestre</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Alumno</th>
+            <th>1T</th>
+            <th>2T</th>
+            <th>3T</th>
+            <th>Media</th>
+            <th>Calificación</th>
+          </tr>
+        </thead>
+        <tbody id="t-body"></tbody>
+      </table>
+    </div>
+    <div class="add-alumno">
+      <h2>Añadir alumno</h2>
+      <form id="form-alumno">
+        <div class="field field--name">
+          <label for="form-nombre">Nombre</label>
+          <input type="text" name="nombre-estudiante" id="form-nombre" />
+        </div>
+        <div class="field">
+          <label for="form-nota-1t">1ºT</label>
+          <input type="number" name="nota-1t" id="form-nota-1t" />
+        </div>
+        <div class="field">
+          <label for="form-nota-2t">2ºT</label>
+          <input type="number" name="nota-2t" id="form-nota-2t" />
+        </div>
+        <div class="field">
+          <label for="form-nota-3t">3ºT</label>
+          <input type="number" name="nota-3t" id="form-nota-3t" />
+        </div>
+        <button type="submit">Añadir alumno</button>
+      </form>
+    </div>
+    <section class="consultas" aria-labelledby="consultas-title">
+      <h2 id="consultas-title">Consultas</h2>
+      <div class="consulta-grid">
+        <article class="consulta">
+          <h3>Contar aprobados</h3>
+          <button type="button" id="btn-contar-aprobados">Consultar</button>
+          <p id="resultado-aprobados" class="resultado" aria-live="polite"></p>
+        </article>
+        <article class="consulta">
+          <h3>Mejor nota de la clase</h3>
+          <button type="button" id="btn-mejor-nota">Consultar</button>
+          <p id="resultado-mejor-nota" class="resultado" aria-live="polite"></p>
+        </article>
+        <article class="consulta">
+          <h3>Media de un trimestre</h3>
+          <label for="trimestre-consulta">Trimestre</label>
+          <select id="trimestre-consulta">
+            <option value="1t">1º trimestre</option>
+            <option value="2t">2º trimestre</option>
+            <option value="3t">3º trimestre</option>
+          </select>
+          <button type="button" id="btn-media-trimestre">Consultar</button>
+          <p id="resultado-media-trimestre" class="resultado" aria-live="polite"></p>
+        </article>
+        <article class="consulta">
+          <h3>Buscar un alumno</h3>
+          <label for="alumno-consulta">Nombre</label>
+          <input type="search" id="alumno-consulta" placeholder="Nombre del alumno" />
+          <button type="button" id="btn-buscar-alumno">Buscar</button>
+          <p id="resultado-alumno" class="resultado" aria-live="polite"></p>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

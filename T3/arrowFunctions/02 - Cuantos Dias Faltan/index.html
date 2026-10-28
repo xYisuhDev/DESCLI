@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Cuántos días faltan?</title>
+    <script src="index.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: min(90%, 420px);
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      input,
+      button {
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.75rem;
+        font-size: 1rem;
+      }
+
+      #resultado {
+        margin-top: 1.2rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>¿Cuántos días faltan?</h1>
+      <label for="fecha">Elige una fecha:</label>
+      <input id="fecha" type="date" />
+      <button id="calcular" type="button">Calcular</button>
+      <p id="resultado">Introduce una fecha.</p>
+    </div>
+  </body>
+</html>

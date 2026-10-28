@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reloj con pausa</title>
+    <script src="index.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      #hora {
+        font-size: 2rem;
+        margin: 1.5rem 0;
+        font-weight: bold;
+      }
+
+      button {
+        margin: 0 0.5rem;
+        padding: 0.7rem 1rem;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Reloj con pausa</h1>
+      <div id="hora">00:00:00</div>
+      <button id="iniciar" type="button">Iniciar</button>
+      <button id="pausar" type="button">Pausar</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --surface-alt: #f8fafc;
+    --text: #1f2937;
+    --muted: #64748b;
+    --border: #d7e0ea;
+    --accent: #1d4ed8;
+    --accent-dark: #1e40af;
+    --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 40px 20px 56px;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top, rgba(29, 78, 216, 0.12), transparent 32%),
+        linear-gradient(180deg, #eef4fb 0%, var(--bg) 100%);
+}
+
+#title {
+    width: min(1100px, 100%);
+    margin: 0 auto 24px;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+#t-container,
+.add-alumno,
+.consultas {
+    width: min(1100px, 100%);
+    margin: 0 auto 24px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid rgba(215, 224, 234, 0.8);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+#t-container h2,
+.add-alumno h2 {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.table thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.92rem;
+    color: #0f172a;
+    background: linear-gradient(180deg, #edf3ff 0%, #e6eefc 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e8eef5;
+}
+
+.table tbody tr:nth-child(even) {
+    background: var(--surface-alt);
+}
+
+.table tbody tr:hover {
+    background: #eef4ff;
+}
+
+.table th:not(:first-child),
+.table td:not(:first-child) {
+    text-align: center;
+}
+
+.add-alumno form {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) repeat(3, minmax(110px, 1fr)) auto;
+    gap: 14px;
+    align-items: end;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.field--name {
+    min-width: 0;
+}
+
+.field--name input {
+    min-width: 0;
+}
+
+.add-alumno input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.add-alumno input:focus {
+    border-color: rgba(29, 78, 216, 0.75);
+    box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
+}
+
+.add-alumno button {
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(29, 78, 216, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.add-alumno button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.03);
+    box-shadow: 0 16px 30px rgba(29, 78, 216, 0.28);
+}
+
+.add-alumno button:active {
+    transform: translateY(0);
+}
+
+.consultas h2 {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+}
+
+.consulta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.consulta {
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-alt);
+}
+
+.consulta h3 {
+    margin: 0 0 14px;
+    font-size: 1rem;
+}
+
+.consulta label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.consulta input,
+.consulta select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+}
+
+.consulta button {
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.resultado {
+    min-height: 24px;
+    margin: 12px 0 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .add-alumno form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field--name {
+        grid-column: 1 / -1;
+    }
+
+    .add-alumno button {
+        grid-column: 1 / -1;
+    }
+
+    .consulta-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 20px 12px 40px;
+    }
+
+    #t-container,
+    .add-alumno {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .add-alumno form {
+        grid-template-columns: 1fr;
+    }
+}
+
+.suspenso {
+    background-color: lightcoral;
+}
+
+
+.aprobado {
+    background: lightgreen;
+}
